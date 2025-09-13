@@ -167,9 +167,9 @@ public class WiFiAnalyzer {
         if (m.find()) {
             double bitsPerSec = Double.parseDouble(m.group(1)) * 8;
             double mbps = bitsPerSec / 1_000_000.0;
-            return String.format("%.1f Mbps", mbps);
+            return String.format("%.1f MB/s", mbps / 8);
         }
-        return "0 Mbps";
+        return "0 MB/s";
     }
 
     private static String extractPing(String json) {
@@ -182,9 +182,9 @@ public class WiFiAnalyzer {
         if (net.signal >= 80) net.download = "100-300 Mbps";
         else if (net.signal >= 60) net.download = "50-100 Mbps";
         else if (net.signal >= 40) net.download = "10-50 Mbps";
-        else net.download = "<10 Mbps";
-        net.upload = "(E X P E C T E D)";
-        net.ping = "";
+        else net.download = "< 10 Mbps";
+        net.upload = "(E X P E ";
+        net.ping = "C T E D)";
     }
 
     private static boolean isSpeedTestAvailable() {
