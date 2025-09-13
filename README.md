@@ -35,52 +35,62 @@ Old_Router                               22%        ████░░░░░�
 
 ✅ Scan complete.
 ```
-🚀 Installation & Usage
+## 🚀 Installation & Usage
 1️⃣ Clone the Repository
+```bash
 git clone https://github.com/your-username/WiFiAnalyzer.git
 cd WiFiAnalyzer
+```
 
 2️⃣ Compile the Project
+```bash
 javac WiFiAnalyzer.java
+```
 
 3️⃣ Run the Program
+```bash
 java WiFiAnalyzer
+```
 
 4️⃣ (Optional) Install Speedtest CLI
 
 For accurate speed measurement of the connected SSID, install speedtest-cli
 :
-
+```bash
 pip install speedtest-cli
+```
 
-🖥 Commands Used Internally
+## 🖥 Commands Used Internally
 
 This project uses standard OS-level commands to collect Wi-Fi data and run speed tests:
 
-Purpose	Command (Windows)	Example Output
-Scan networks	netsh wlan show networks mode=bssid	SSIDs, signals, security types
-Get connected network	netsh wlan show interfaces	Current SSID name
-Run speed test	speedtest -f json	Download, upload, ping in JSON
+Purpose	Command (Windows)	Example Output:
+
+✅ Scan networks	netsh wlan show networks mode=bssid	SSIDs, signals, security types
+
+✅ Get connected network	netsh wlan show interfaces	Current SSID name
+
+✅ Run speed test	speedtest -f json	Download, upload, ping in JSON
 
 Note: For Linux/macOS support, these commands can be replaced with:
 
-Linux: nmcli dev wifi list
+Linux: ``` nmcli dev wifi list ```
 
-macOS: /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s
+macOS: ``` /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s ```
 
-⚙️ How It Works
+## ⚙️ How It Works
 
-Uses netsh wlan show networks to scan available SSIDs (on Windows).
+✅ Uses netsh wlan show networks to scan available SSIDs (on Windows).
 
-Detects the connected SSID using netsh wlan show interfaces.
+✅ Detects the connected SSID using netsh wlan show interfaces.
 
-Performs real-time speed tests using speedtest-cli (if available).
+✅ Performs real-time speed tests using speedtest-cli (if available).
 
-Estimates speeds for unconnected networks based on signal percentage.
+✅ Estimates speeds for unconnected networks based on signal percentage.
 
-Displays results in a sorted, formatted, and colorized table.
+✅ Displays results in a sorted, formatted, and colorized table.
 
-🛠 Planned Features
+## 🛠 Planned Features
 
 🔄 Cross-platform support for Linux (nmcli) and macOS (airport -s).
 
